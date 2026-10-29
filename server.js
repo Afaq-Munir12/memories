@@ -2,7 +2,7 @@
 const http = require('http'), fs = require('fs'), path = require('path');
 try { fs.readFileSync(path.join(__dirname, '.env'), 'utf8').split(/\r?\n/).forEach(l => { const m = /^([A-Z_]+)=(.*)$/.exec(l); if (m && !process.env[m[1]]) process.env[m[1]] = m[2]; }); } catch (e) {}
 const routes = { '/api/login': require('./api/login'), '/api/logout': require('./api/logout'), '/app': require('./api/app') };
-const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.ico': 'image/x-icon' };
+const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.webmanifest': 'application/manifest+json', '.json': 'application/json', '.ico': 'image/x-icon' };
 const root = path.join(__dirname, 'public'), port = process.env.PORT || 3000;
 http.createServer((q, r) => {
   const p = q.url.split('?')[0];

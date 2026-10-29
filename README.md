@@ -9,6 +9,14 @@ Controls: WASD / arrows (phone: on-screen stick) to walk. Drag to look around 36
 - **Login (server side).** `public/index.html` is the login page. `api/login.js` checks the username (`afaqu` or `hado`) and the password stored in an environment variable, then sets a signed, HttpOnly cookie. The 3D app (`private/app.html`) is only ever sent by `api/app.js` when that cookie is valid. The password is never in the page code.
 - **Saved photos.** Photos, captions and dates are saved in your browser (IndexedDB) automatically. Photos are shrunk to max 1600px to save space. No database needed.
 
+## Play on a phone like a game
+
+Websites cannot force fullscreen or landscape the moment a link opens (phones block that). These steps give you the next best thing:
+
+- **Android (Chrome):** open your link, tap the menu (three dots), choose **Install app** or **Add to Home screen**. Open it from the new "Our Memories" icon: it starts fullscreen and landscape, with no browser bars.
+- **iPhone (Safari):** open your link, tap Share, then **Add to Home Screen**. Open it from the icon for a full-screen view. iPhones cannot lock the screen sideways, so turn off Portrait Orientation Lock and rotate the phone.
+- **Without installing:** tapping **Step inside** goes fullscreen and locks landscape on Android. If the phone is upright you will see a "turn your phone sideways" screen. The **Fullscreen** button in the top bar toggles it anytime.
+
 ## Run on localhost
 
 1. Install Node.js 18 or newer from https://nodejs.org

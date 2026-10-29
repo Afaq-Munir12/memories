@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#14102b"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#14102b"><link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="apple-mobile-web-app-title" content="Our Memories"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
 <title>Our Memory Hall</title>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -9,16 +9,22 @@
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{height:100%;margin:0;background:var(--night);color:var(--paper);font-family:Figtree,system-ui,sans-serif;overflow:hidden}
 canvas{display:block;touch-action:none}
+#rot{position:fixed;inset:0;z-index:30;display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#14102b;text-align:center;padding:24px}
+@media (orientation:portrait) and (pointer:coarse){body:not(.norot) #rot{display:flex}}
+.ph{width:54px;height:90px;border:4px solid var(--amber);border-radius:12px;animation:tilt 2.4s ease-in-out infinite}
+@keyframes tilt{0%,30%{transform:rotate(0)}60%,100%{transform:rotate(-90deg)}}
+@media (pointer:coarse){#hud .btn{padding:.35rem .75rem;font-size:.8rem}#hud .t{font-size:1.25rem}}
+@media (max-height:520px){#start{overflow:auto;align-items:flex-start}.card h1{font-size:2.1rem}.card p{margin-bottom:.7rem}#vimg{max-height:46vh}}
 html,body{overscroll-behavior:none}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}input{-webkit-user-select:text;user-select:text}
 button,input{font:inherit}
 .btn{background:var(--amber);color:var(--ink);border:0;border-radius:999px;padding:.6rem 1.1rem;font-weight:600;cursor:pointer}
 .btn.ghost{background:rgba(20,16,43,.7);color:var(--paper);border:1px solid rgba(246,236,217,.35)}
 .btn:focus-visible,input:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
-#hud{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:12px;right:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;z-index:5}
+#hud{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:calc(12px + env(safe-area-inset-left,0px));right:calc(12px + env(safe-area-inset-right,0px));display:flex;gap:8px;flex-wrap:wrap;align-items:center;z-index:5}
 #hud .t{font-family:Caveat,cursive;font-size:1.7rem;margin-right:auto;text-shadow:0 2px 8px #000}
 #prompt{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 28px);left:50%;transform:translateX(-50%);z-index:5;display:none;max-width:90vw}
 #help{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 8px);left:0;right:0;text-align:center;font-size:.8rem;opacity:.65;pointer-events:none}
-#stick{position:fixed;left:24px;bottom:calc(env(safe-area-inset-bottom,0px) + 40px);width:110px;height:110px;border-radius:50%;background:rgba(246,236,217,.12);border:1px solid rgba(246,236,217,.3);display:none;z-index:5;touch-action:none}
+#stick{position:fixed;left:calc(24px + env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 40px);width:110px;height:110px;border-radius:50%;background:rgba(246,236,217,.12);border:1px solid rgba(246,236,217,.3);display:none;z-index:5;touch-action:none}
 #knob{position:absolute;left:35px;top:35px;width:40px;height:40px;border-radius:50%;background:var(--amber);opacity:.85}
 #start,#viewer,#edit,#pc{position:fixed;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;background:rgba(20,16,43,.9);padding:16px}
 #edit,#pc{display:none}#viewer{display:none;flex-direction:column;gap:12px;background:rgba(10,8,24,.94)}
@@ -45,11 +51,11 @@ body.in #help{opacity:.65;transition:opacity 1.4s 1.2s}
 <div id="hud"><span class="t" id="title">Hado Afaqu Memories</span>
 <button class="btn ghost" id="swap">Switch partner</button>
 <button class="btn ghost" id="newroom">Add a date</button><button class="btn ghost" id="edate">Edit date</button><button class="btn" id="add">Add photos</button>
-<input type="file" id="file" accept="image/*" multiple hidden><button class="btn ghost" id="bk">Backup</button><button class="btn ghost" id="rs">Restore</button><input type="file" id="rsf" accept="application/json" hidden><button class="btn ghost" id="lo2">Log out</button></div>
+<input type="file" id="file" accept="image/*" multiple hidden><button class="btn ghost" id="bk">Backup</button><button class="btn ghost" id="rs">Restore</button><input type="file" id="rsf" accept="application/json" hidden><button class="btn ghost" id="fs">Fullscreen</button><button class="btn ghost" id="lo2">Log out</button></div>
 <button class="btn" id="prompt"></button>
 <div id="help">Walk to the gate and into the library with WASD or arrow keys · press E near a frame · drag to look around 360° · scroll to zoom · C to recenter</div>
 <div id="stick"><div id="knob"></div></div>
-<div id="start"><div class="card"><h1>Hado Afaqu Memories</h1>
+<div id="start"><div class="card"><h1>Our Memories</h1>
 <p>Welcome, <b id="wn">you</b>. This is our private library.</p>
 <div id="err"></div>
 <button class="btn" id="go">Step inside</button> <button class="btn ghost" id="lo">Log out</button></div></div>
@@ -59,6 +65,7 @@ body.in #help{opacity:.65;transition:opacity 1.4s 1.2s}
 
 <div id="edit"><div class="card"><h1>Edit date</h1><input id="ed" maxlength="18" placeholder="e.g. 18 Oct 2025"><div class="row"><button class="btn ghost" id="ecancel">Cancel</button><button class="btn" id="esave">Save</button></div></div></div>
 <div id="pc"><div class="card"><h1>Add a new date</h1><p id="pcn"></p><input id="pcd" maxlength="18" placeholder="e.g. 14 Feb 2026"><div class="row"><button class="btn ghost" id="pcc">Cancel</button><button class="btn" id="pca">Add date room</button></div></div></div>
+<div id="rot"><div class="ph"></div><p>Turn your phone sideways for the best view</p><button class="btn ghost" id="rotx">Continue anyway</button></div>
 <div id="fade"></div>
 <script>window.USER='__USER__'</script>
 <script src="/vendor/three.min.js"></script>
@@ -334,7 +341,7 @@ s.onpointerdown=e=>{s.setPointerCapture(e.pointerId);mv(e)};s.onpointermove=e=>{
 $('#swap').onclick=()=>{act=1-act};
 $('#add').onclick=()=>$('#file').click();
 $('#file').onchange=async e=>{const files=[...e.target.files];e.target.value='';for(const f of files){let m=null;if(pk&&pk!=='new'&&pk.ph){m=pk;pk=null}else if(pk!=='new')m=mem.find(x=>x.ph)||null;if(!m){m=newMem(mem);mem.push(m)}m.ph=false;m.blob=await shrink(f);m.src=URL.createObjectURL(m.blob);m.cap=f.name.replace(/\.[^.]+$/,'').slice(0,26);load(m)}pk=null;build();save()};
-$('#go').onclick=()=>{const u=window.USER==='hado'?'hado':'afaqu';
+$('#go').onclick=()=>{const u=window.USER==='hado'?'hado':'afaqu';if(matchMedia('(pointer:coarse)').matches)FS();
  act=u==='hado'?1:0;camK=.02;setTimeout(()=>camK=.06,3500);document.body.classList.add('in');$('#err').textContent='';$('#start').style.display='none';
  him.add(label('Afaqu'));her.add(label('Hado'));build()};
 
@@ -396,5 +403,7 @@ const lo=()=>fetch('/api/logout',{method:'POST'}).finally(()=>location.href='/')
 $('#bk').onclick=async()=>{const rd=b=>new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result);f.readAsDataURL(b)}),o2=[];for(const r of rooms){const ms=[];for(const m of r.mem)ms.push({b:m.blob?await rd(m.blob):null,cap:m.cap,date:m.date});o2.push({d:r.d,mem:ms})}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(o2)],{type:'application/json'}));a.download='hado-afaqu-backup.json';a.click()};
 $('#rs').onclick=()=>$('#rsf').click();
 $('#rsf').onchange=async e=>{const f=e.target.files[0];if(!f)return;const st=JSON.parse(await f.text());for(const r of st)for(const m of r.mem)if(m.b)m.b=await(await fetch(m.b)).blob();await kv('put','state',st);location.reload()};
+function FS(){const d=document,e=d.documentElement;if(d.fullscreenElement||d.webkitFullscreenElement){(d.exitFullscreen||d.webkitExitFullscreen).call(d);return}const f=e.requestFullscreen||e.webkitRequestFullscreen;if(!f)return;Promise.resolve(f.call(e)).then(()=>{if(matchMedia('(pointer:coarse)').matches&&screen.orientation&&screen.orientation.lock)return screen.orientation.lock('landscape')}).catch(()=>{})}
+$('#fs').onclick=FS;$('#rotx').onclick=()=>document.body.classList.add('norot');
 cam.position.set(0,5.2,54);tick();
 </script></body></html>
