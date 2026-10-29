@@ -1,0 +1,8 @@
+{
+  "name": "hado-afaqu-memories",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A 3D memory library for Hado and Afaqu",
+  "engines": { "node": ">=18" },
+  "scripts": { "start": "node server.js" }
+}

@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "outputDirectory": "public",
+  "rewrites": [{ "source": "/app", "destination": "/api/app" }],
+  "functions": { "api/app.js": { "includeFiles": "private/**" } }
+}
