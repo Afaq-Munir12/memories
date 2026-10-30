@@ -33,6 +33,13 @@ Open the site on two devices at the same time. One person signs in as `afaqu` (m
 - **Emotes:** click **Emotes** or press `1` Dance, `2` Wave, `3` Heart, `4` Hug. Dance and Hug make your partner join in. For a hug, walk close to each other first, then both walk together and hug. Moving cancels an emote.
 - **Love Garden (right side of the street, opposite the park):** six flower beds (red roses, pink tulips, sunflowers, lavender, daisies, lilies). Press `E` at a bed to pick a flower; it appears in your hand. Walk up to your partner and press `E` again to give it to them. Anyone can pick and give flowers.
 
+## Ferris wheel, benches and our mansion
+
+- **Love Wheel (in the park, at the far end):** a huge lit-up Ferris wheel. Stand on its platform and press `E` to ride together in one cabin. Each ride is one full turn and you get off at the bottom (press `E` or move to leave early; you step off when the cabin comes back down).
+- **Benches:** press `E` near any bench to sit together. There are benches around the park plaza, near the wheel, along the street and around the garden gazebo. Walk or press `E` again to get up.
+- **Our Home (end of the street):** past the park and garden, behind the "Welcome Home" gate and a fountain, stands a mansion with columns, a dome-less hip roof and glowing windows. Press `E` at the front door. Inside: a living room with a fireplace and two sofas, a piano to play, a dining table to sit at together, a canopy bed, night-sky windows, chandeliers and flowers. The door at the back of the room takes you outside again.
+- Tip: the street starts facing the library. Drag to turn the camera around (or use the arrow keys / `S`) to head down the street towards the park, the garden and the mansion.
+
 ## The park
 
 Walk past the shops to the "Love Park" gate on the left side of the street (about halfway down). Inside you will find a swing set, a slide, a seesaw and a merry-go-round, with trees, benches, lamps and flowers. Stand near one and press `E` (phone: tap the button). On the swing, seesaw and merry-go-round both characters get on together. Press `E` again or move to get off.
