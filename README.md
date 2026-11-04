@@ -39,6 +39,14 @@ Open the site on two devices at the same time. One person signs in as `afaqu` (m
 - **Automatic gate (sliding, on wheels):** the Our Home gate opens by itself when you or the car get close, from either side, and closes again about a second and a half after everyone has moved away. The status light on the posts is red when closed, amber while moving and green when open. The gate is solid while it is closed.
 - **Characters:** jointed knees and elbows, a forward lean and hip sway when walking, gentle breathing, blinking, a smile, heads that turn to look at each other, smooth acceleration and turning, and knees that bend when sitting.
 
+## Garden and swimming pool outside
+
+The two buildings that stood on either side of the home are gone. Past the automatic gate the grounds are now open gardens:
+
+- **Left garden, pool terrace:** a stone terrace with a big swimming pool (walk in and swim, or press `E` at the front edge to jump in together), four poolside daybeds with parasols (sit together), palm trees, lamps, flower borders and trees.
+- **Right garden:** lawn with flower beds, two benches (sit together), trees and lamps. The driveway to the garage crosses it.
+- Everything inside the black fence is walkable on foot. The car still drives on the road and driveway only.
+
 ## Amour restaurant and the car
 
 - **Amour (restaurant):** on the right side of the street, near where you start, with a striped awning, glass windows, fairy lights and a glowing sign. Press `E` at the door. Inside: six candlelit tables for two (sit together), a bar, a host stand (ask for the menu), a dance floor with a mirror ball, a stage with a grand piano, a jukebox, paintings, glass windows and a waiter who walks between the tables. Use the piano or jukebox spot (`E`) to start soft romantic music (and `E` again to stop it). Dance together on the dance floor with the Dance emote.
@@ -48,7 +56,7 @@ Open the site on two devices at the same time. One person signs in as `afaqu` (m
 
 - **Love Wheel (in the park, at the far end):** a huge lit-up Ferris wheel. Stand on its platform and press `E` to ride together in one cabin. Each ride is one full turn and you get off at the bottom (press `E` or move to leave early; you step off when the cabin comes back down).
 - **Benches:** press `E` near any bench to sit together. There are benches around the park plaza, near the wheel, along the street and around the garden gazebo. Walk or press `E` again to get up.
-- **Our Home (end of the street):** past the park and garden, behind the "Welcome Home" gate and a fountain, stands a glass-fronted mansion: glass front doors, glass windows with gold frames, huge glass curtain walls on both wings and a glass roof lantern. Press `E` at the front door. Inside: a living room with a fireplace, marble columns, paintings, two sofas and a piano; a dining table and a canopy bed you can sit at together; then through an archway a **swimming pool hall** with a glass roof and floor-to-ceiling glass walls, poolside daybeds (sit together) and a pool you can walk into and swim in (or press `E` at the edge to jump in together); and finally a marble **bathroom** with a freestanding tub (take a bath together), a glass shower (press `E` to turn the rain on and off), a double vanity with mirrors and a toilet. The door at the back of the entrance hall takes you outside again.
+- **Our Home (end of the street):** a modern glass house behind an automatic gate. Press `E` at the front door. Inside: living room (fireplace, piano, two sofas), a dining table and a bed to sit at together, glass windows, and a **door to the bathroom** in the hall (white stone room with a freestanding tub, glass shower, double vanity and mirrors). You do not have to walk through the bedroom to reach it.
 - Tip: the street starts facing the library. Drag to turn the camera around (or use the arrow keys / `S`) to head down the street towards the park, the garden and the mansion.
 
 ## The park
